@@ -1,0 +1,3 @@
+[04-Aug-2009 16:51:22] PHP Warning:  opendir(http://www.gtsplus.net/files/images/sprites/icons/) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: not implemented in /home/nza/public_html/media/pokecons_action/copycat.php on line 3
+[04-Aug-2009 16:51:22] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/nza/public_html/media/pokecons_action/copycat.php on line 5
+[04-Aug-2009 16:51:22] PHP Warning:  closedir(): supplied argument is not a valid Directory resource in /home/nza/public_html/media/pokecons_action/copycat.php on line 15

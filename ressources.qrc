@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/font">
+        <file>font/Pokemon GB.ttf</file>
+        <file>font/pkmnfl.ttf</file>
+    </qresource>
+</RCC>
