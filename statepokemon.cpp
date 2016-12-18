@@ -70,12 +70,12 @@ void StatePokemon::Draw()
     else if (state == "SKILLS"){
         painter->drawImage(QPoint(0,0),GameMnr->getRscMng().pokemonSkillsBackground->scaled(832,576));
         painter->drawText(QRect(620,83,200,100),Qt::AlignRight,QString::number(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPv())+"/"+QString::number(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPvMax()));
-        if (float(GameMnr->getPlayer().getTeamPokemon(0).getPv())/float(GameMnr->getPlayer().getTeamPokemon(0).getPvMax())<0.125)
-            painter->drawImage(QPoint(635,121),GameMnr->getRscMng().hpRed->scaled(169*(float(GameMnr->getPlayer().getTeamPokemon(0).getPv())/float(GameMnr->getPlayer().getTeamPokemon(0).getPvMax())),12));
-        else if (float(GameMnr->getPlayer().getTeamPokemon(0).getPv())/float(GameMnr->getPlayer().getTeamPokemon(0).getPvMax())<0.5)
-            painter->drawImage(QPoint(635,121),GameMnr->getRscMng().hpYellow->scaled(169*(float(GameMnr->getPlayer().getTeamPokemon(0).getPv())/float(GameMnr->getPlayer().getTeamPokemon(0).getPvMax())),12));
+        if (float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPv())/float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPvMax())<0.125)
+            painter->drawImage(QPoint(635,121),GameMnr->getRscMng().hpRed->scaled(169*(float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPv())/float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPvMax())),12));
+        else if (float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPv())/float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPvMax())<0.5)
+            painter->drawImage(QPoint(635,121),GameMnr->getRscMng().hpYellow->scaled(169*(float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPv())/float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPvMax())),12));
         else
-            painter->drawImage(QPoint(635,121),GameMnr->getRscMng().hpGreen->scaled(169*(float(GameMnr->getPlayer().getTeamPokemon(0).getPv())/float(GameMnr->getPlayer().getTeamPokemon(0).getPvMax())),12));
+            painter->drawImage(QPoint(635,121),GameMnr->getRscMng().hpGreen->scaled(169*(float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPv())/float(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getPvMax())),12));
 
         painter->drawText(QRect(620,147,200,100),Qt::AlignRight,QString::number(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getAttack()));
         painter->drawText(QRect(620,195,200,100),Qt::AlignRight,QString::number(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getDefense()));
@@ -85,7 +85,7 @@ void StatePokemon::Draw()
         painter->drawText(QRect(620,388,200,100),Qt::AlignRight,QString::number(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getExp()));
         painter->drawText(QRect(620,433,200,100),Qt::AlignRight,QString::number(GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getExpToNextLvl()));
 
-        for (int i=0;i<(32*GameMnr->getPlayer().getTeamPokemon(0).getExpPercent())/100;i++)
+        for (int i=0;i<(32*GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getExpPercent())/100;i++)
             painter->drawImage(QPoint(579+i*7,473),GameMnr->getRscMng().pokemonExp->scaled(7,11));
 
         painter->drawText(QRect(247,480,300,100),GameMnr->getPlayer().getTeamPokemon(pokemonSelected-1).getAbility());
